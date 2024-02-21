@@ -15,7 +15,8 @@
     "react",
     "storybook",
     "rollup",
-    "boilerplate"
+    "boilerplate",
+    "chatbot"
   ],
   "author": "Masood Shaterabadi",
   "repository": {
