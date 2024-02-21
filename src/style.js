@@ -4,12 +4,20 @@ export const ContainerLeft = styled.div({
   position: 'absolute',
   bottom: '5rem',
   left: '5rem',
+  '@media (max-width: 768px)': {
+    left: '1rem',
+    bottom: '1rem',
+  },
 });
 
 export const ContainerRight = styled.div({
   position: 'absolute',
   bottom: '5rem',
   right: '5rem',
+  '@media (max-width: 768px)': {
+    right: '1rem',
+    bottom: '1rem',
+  },
 });
 
 export const Button = styled.button({
@@ -32,6 +40,14 @@ export const ChatPageContainerRight = styled.div({
   borderRadius: '16px',
   overflow: 'hidden',
   backgroundColor: 'lightgoldenrodyellow',
+  '@media (max-width: 768px)': {
+    width: '100vw',
+    maxWidth: '100vw',
+    height: '100vh',
+    bottom: '-1rem',
+    right: '-1.05rem',
+    borderRadius: '0',
+  },
 });
 
 export const ChatPageContainerLeft = styled.div({
@@ -45,6 +61,14 @@ export const ChatPageContainerLeft = styled.div({
   borderRadius: '16px',
   overflow: 'hidden',
   backgroundColor: 'lightgoldenrodyellow',
+  '@media (max-width: 768px)': {
+    width: '100vw',
+    maxWidth: '100vw',
+    height: '100vh',
+    bottom: '-1rem',
+    left: '-1.05rem',
+    borderRadius: '0',
+  },
 });
 
 export const ChatPageTitle = styled.div({
@@ -63,7 +87,6 @@ export const ChatInPutMessage = styled.div({
   position: 'absolute',
   bottom: 0,
   width: '100%',
-  maxWidth: '25rem',
   height: '4rem',
   backgroundColor: 'lightgray',
   display: 'flex',
