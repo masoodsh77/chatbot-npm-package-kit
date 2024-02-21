@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import { Icon } from '@iconify/react';
 import {
+  Button,
+  ContainerRight,
+  ContainerLeft,
   ChatInPut,
   ChatInPutMessage,
   ChatPageContainerLeft,
@@ -10,15 +14,45 @@ import {
   MessageBubble,
   MessageContainer,
   MessageText,
-} from '../style';
-import { Icon } from '@iconify/react';
+} from './style';
 
-interface Props {
-  position: 'bottom-right' | 'bottom-left';
-  message: string;
-  onClose: () => void;
-}
-export default function ChatPage({ position, message, onClose }: Props) {
+const ChatButton = ({ message, position }) => {
+  const [open, setOpen] = useState(false);
+
+  if (position === 'bottom-left') {
+    return (
+      <ContainerLeft>
+        {open && (
+          <ChatPage
+            position={position}
+            message={message}
+            onClose={() => setOpen(false)}
+          />
+        )}
+        <Button onClick={() => setOpen(!open)}>
+          <Icon icon="mynaui:chat-dots" width={32} height={32} />
+        </Button>
+      </ContainerLeft>
+    );
+  } else {
+    return (
+      <ContainerRight>
+        {open && (
+          <ChatPage
+            position={position}
+            message={message}
+            onClose={() => setOpen(false)}
+          />
+        )}
+        <Button onClick={() => setOpen(!open)}>
+          <Icon icon="mynaui:chat-dots" width={32} height={32} />
+        </Button>
+      </ContainerRight>
+    );
+  }
+};
+
+const ChatPage = ({ position, message, onClose }) => {
   if (position === 'bottom-right') {
     return (
       <ChatPageContainerRight>
@@ -68,4 +102,5 @@ export default function ChatPage({ position, message, onClose }: Props) {
       </ChatPageContainerLeft>
     );
   }
-}
+};
+export { ChatButton };

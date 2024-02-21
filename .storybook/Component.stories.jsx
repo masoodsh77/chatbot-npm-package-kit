@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChatButton } from '../src/index.tsx';
+import { ChatButton } from '../src/index.jsx';
 
 export default {
   component: ChatButton,
