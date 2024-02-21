@@ -20,7 +20,7 @@
   "author": "Masood Shaterabadi",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codifytools/react-npm-package-boilerplate.git"
+    "url": "git+https://github.com/masoodsh77/chatbot-npm-package-kit"
   },
   "license": "MIT",
   "engines": {
